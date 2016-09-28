@@ -1,0 +1,2 @@
+module CoodinateHelper
+end

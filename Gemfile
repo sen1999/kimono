@@ -49,5 +49,8 @@ group :development do
   gem 'devise'
   gem 'paperclip'
   gem 'kaminari'
+
+  gem 'rmagick'
+  gem 'aws-sdk'
 end
 
