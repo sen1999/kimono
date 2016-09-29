@@ -47,10 +47,9 @@ group :development do
   # me!!
   gem 'pry-rails'
   gem 'devise'
-  gem 'paperclip'
   gem 'kaminari'
 
+  gem 'carrierwave'
   gem 'rmagick'
-  gem 'aws-sdk'
 end
 
