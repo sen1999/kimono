@@ -1,13 +1,6 @@
 class TansuController < ApplicationController
+
   def show
-    @tansu = Tansu.all
-  end
-
-  def new
-    @tansu = Tansu.new
-  end
-
-  def index
     @tansus = Tansu.all
     @tansu = Tansu.new
   end
