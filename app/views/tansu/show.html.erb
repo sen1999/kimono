@@ -1,6 +1,7 @@
 
 <br><br>
 <% @tansu.each do |tansu| %>
-  <%= image_tag tansu.image %>
+  <%= image_tag tansu.image(:medium)%>
   <p><%= tansu.memo %></p>
 <% end %>
+

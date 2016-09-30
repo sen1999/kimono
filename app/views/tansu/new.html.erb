@@ -1,7 +1,5 @@
-  <p><font size="100"><center>らったった</center></font></p>
-
 <%= form_for(@tansu,:url => {:action => :create}) do |f| %>
 <%= f.text_field :memo, placeholder: "例）  縦縞" %>
-<%= f.file_field :image,placeholder: "画像アップロード" %>
+<%= f.file_field :image, placeholder: "画像アップロード" %>
 <%= f.submit "たんすに入れる" %>
 <% end %>

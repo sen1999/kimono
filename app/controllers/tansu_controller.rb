@@ -11,10 +11,11 @@ class TansuController < ApplicationController
     # @tansu = Tansu.new(params[:memo])
     @tansu = Tansu.create(create_params)
     @tansu.save
-    redirect_to :root
+    redirect_to "/tansu/show"
   end
 
   def create_params
     params.require(:tansu).permit(:memo, :image)
-end
+  end
+
 end
