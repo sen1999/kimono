@@ -48,7 +48,12 @@ group :development do
   gem 'pry-rails'
   gem 'devise'
   gem 'kaminari'
-
+  # for image
   gem 'paperclip'
+
+  # tag
+  gem 'acts-as-taggable-on'
+  gem 'jquery-ui-rails'
+  gem 'gon'
 end
 
