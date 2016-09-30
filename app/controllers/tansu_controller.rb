@@ -7,11 +7,16 @@ class TansuController < ApplicationController
     @tansu = Tansu.new
   end
 
+  def index
+    @tansus = Tansu.all
+    @tansu = Tansu.new
+  end
+
   def create
     # @tansu = Tansu.new(params[:memo])
     @tansu = Tansu.create(create_params)
     @tansu.save
-    redirect_to "/tansu/show"
+    @tansus = Tansu.all
   end
 
   def create_params
