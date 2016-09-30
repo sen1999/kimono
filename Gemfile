@@ -52,7 +52,7 @@ group :development do
   gem 'paperclip'
 
   # tag
-  gem 'acts-as-taggable-on'
+  # gem 'acts-as-taggable-on'
   gem 'jquery-ui-rails'
   gem 'gon'
 end

@@ -1,7 +1,15 @@
-
 <br><br>
 <% @tansu.each do |tansu| %>
   <%= image_tag tansu.image(:medium)%>
   <p><%= tansu.memo %></p>
 <% end %>
 
+<%= form_for @tansu, :url => {:action => :create}), remote: :true do |f| %>
+<%= f.text_field :memo, placeholder: "例）  縦縞" %>
+<%= f.file_field :image, placeholder: "画像アップロード" %>
+<%= f.submit "たんすに入れる" %>
+<% end %>
+
+<ul>
+  <%= render @tansus %>
+</ul>
