@@ -19,6 +19,10 @@ class TansuController < ApplicationController
     @tansus = Tansu.all
   end
 
+  def destroy
+    Tansu.find(params[:id]).destroy
+    @tansus = Tansu.all
+
   def create_params
     params.require(:tansu).permit(:memo, :image)
   end

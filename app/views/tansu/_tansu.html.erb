@@ -1,4 +1,5 @@
 <li>
   <%= tansu.image %>
   <%= tansu.memo %>
+  <%= link_to '削除' tansu_path(tansu), methed: :delete, remote: true %>
 </li>
