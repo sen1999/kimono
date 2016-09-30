@@ -49,7 +49,6 @@ group :development do
   gem 'devise'
   gem 'kaminari'
 
-  gem 'carrierwave'
-  gem 'rmagick'
+  gem 'paperclip'
 end
 
