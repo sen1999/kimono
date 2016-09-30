@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928080441) do
+ActiveRecord::Schema.define(version: 20160929080406) do
 
-  create_table "kimonos", force: :cascade do |t|
-    t.text     "title",      limit: 65535
+  create_table "tansus", force: :cascade do |t|
+    t.text     "memo",       limit: 65535
+    t.string   "image",      limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
