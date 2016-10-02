@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    binding.pry
     @item = Item.find(params[:id])
   end
 
