@@ -1,0 +1,19 @@
+<%= form_for @item, :url => {:action => :create}, remote: true do |f| %>
+<%= f.text_field :memo, placeholder: "例）  縦縞" %>
+<%= f.file_field :image, placeholder: "画像アップロード" %>
+<%= f.submit "たんすに入れる" %>
+<% end %>
+
+<br>
+
+
+<% @items.each do |item| %>
+  <%= image_tag item.image(:medium)%>
+  <p><%= item.memo %></p>
+
+<ul>
+  <%= render partial: "item", locals: { item: item } %>
+</ul>
+
+<% end %>
+
