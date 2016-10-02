@@ -7,8 +7,7 @@ class TansuController < ApplicationController
 
   def create
     # @tansu = Tansu.new(params[:memo])
-    @tansu = Tansu.create(create_params)
-    @tansu.save
+     Tansu.create(create_params)
     @tansus = Tansu.all
   end
 
@@ -33,7 +32,7 @@ class TansuController < ApplicationController
   def update
     Tansu.find(params[:id]).update(update_params)
   end
-
+private
   def create_params
     params.require(:tansu).permit(:memo, :image)
   end
