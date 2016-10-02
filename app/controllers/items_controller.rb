@@ -13,22 +13,13 @@ class ItemsController < ApplicationController
     Item.find(params[:id]).destroy
     @items = Item.all
   end
-# def edit
-# @answer = Answer.find(params[:id])
-# @question = @answer.question
-# end
 
-# def update
-# @answer = Answer.find(params[:id])
-# @question = @answer.question
-# @answer.update(update_params)
-# end
   def edit
     @item = Item.find(params[:id])
   end
 
   def update
-    Item.find(params[:id]).update(update_params)
+    @item = Item.find(params[:id]).update(update_params)
   end
 private
   def create_params
