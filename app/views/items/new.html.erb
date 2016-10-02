@@ -3,13 +3,3 @@
   <%= f.file_field :image, placeholder: "画像アップロード" %>
   <%= f.submit "たんすに入れる" %>
 <% end %>
-
-<br>
-
-
-<% @items.each do |item| %>
-
-  <%= render partial: "item", locals: { item: item } %>
-
-<% end %>
-
