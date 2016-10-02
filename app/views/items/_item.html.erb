@@ -1,5 +1,5 @@
 <li>
-  <%= item.image %>
+  <%= image_tag item.image(:medium)%>
   <%= item.memo %>
   <%= link_to '削除', item_path(item), method: :delete, remote: true %>
 </li>

@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
-  def show
+  def new
     @items = Item.all
     @item = Item.new
   end
 
   def create
-    # @tansu = Tansu.new(params[:memo])
-     Item.create(create_params)
+    Item.create(create_params)
     @items = Item.all
   end
 
@@ -25,7 +24,7 @@ class ItemsController < ApplicationController
 # @answer.update(update_params)
 # end
   def edit
-    Item.find(params[:id]).edit
+    @item = Item.find(params[:id])
   end
 
   def update
