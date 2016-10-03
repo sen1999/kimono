@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
   end
 private
   def create_params
-    params.require(:item).permit(:memo, :image)
+    params.require(:item).permit(:memo, :image, :kind_list, :use_list)
   end
 
   def update_params
