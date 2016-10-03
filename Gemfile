@@ -51,9 +51,11 @@ group :development do
   # for image
   gem 'paperclip'
 
-  # tag
   # gem 'acts-as-taggable-on'
   gem 'jquery-ui-rails'
   gem 'gon'
+
+  #tag
+  gem 'acts-as-taggable-on'
 end
 
