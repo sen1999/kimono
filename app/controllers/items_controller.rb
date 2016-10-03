@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(14)
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    binding.pry
     @item = Item.find(params[:id])
   end
 

@@ -1,10 +1,19 @@
 <div class="row form">
 <div class="col-lg-12">
-<%= form_for(@item) do |f| %>
 <div>
-<%= f.text_field :memo, placeholder: "???", %>
+<%= image_tag @item.image(:medium)%>
 </div>
-<%= f.submit "!!!" %>
+
+<br>
+
+<%= form_for @item do |f| %>
+  <div>
+  <%= f.text_field :memo, placeholder: "例）  縦縞" %>
+  </div>
+  <div>
+  <%= f.file_field :image, placeholder: "画像アップロード" %>
+  </div>
+<%= f.submit "編集する" %>
 <% end %>
 </div>
 </div>
