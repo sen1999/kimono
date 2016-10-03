@@ -36,6 +36,6 @@ private
   end
 
   def update_params
-    params.require(:item).permit(:memo, :image)
+    params.require(:item).permit(:memo, :image, :kind_list, :use_list)
   end
 end
