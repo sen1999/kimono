@@ -1,0 +1,13 @@
+<%= link_to "new", '/items/new' %><br>
+<%= link_to "index", '/items/index' %>
+
+<br><br>
+
+<% @items.each do |item| %>
+  <a href='/items/<%= item.id %>'><div>
+  <%= image_tag item.image(:medium)%></div>
+  <%= item.memo %></a>
+<% end %>
+
+<br><br>
+
