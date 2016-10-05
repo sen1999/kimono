@@ -16,7 +16,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     Kimono.create(create_params)
     @items = Kimono.all
   end
