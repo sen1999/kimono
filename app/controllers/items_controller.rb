@@ -1,43 +1,44 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.all
+    @items = Kimono.all
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item = Kimono.find(params[:id])
     @items = params[:tag].present? ? Item.tagged_with(params[:tag]) : Item.all
     @items = @items.includes(:tags)
   end
 
   def new
-    @items = Item.all
-    @item = Item.new
+    @items = Kimono.all
+    @item = Kimono.new
   end
 
   def create
-    Item.create(create_params)
-    @items = Item.all
+    binding.pry
+    Kimono.create(create_params)
+    @items = Kimono.all
   end
 
   def destroy
-    Item.find(params[:id]).destroy
-    @items = Item.all
+    Kimono.find(params[:id]).destroy
+    @items = Kimono.all
   end
 
   def edit
-    @item = Item.find(params[:id])
+    @item = Kimono.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id]).update(update_params)
+    @item = Kimono.find(params[:id]).update(update_params)
   end
 private
   def create_params
-    params.require(:item).permit(:memo, :image, :kind_list, :use_list)
+    params.require(:kimono).permit(:image, :kind_list, :use_list)
   end
 
   def update_params
-    params.require(:item).permit(:memo, :image, :kind_list, :use_list)
+    params.require(:kimono).permit(:image, :kind_list, :use_list)
   end
 end

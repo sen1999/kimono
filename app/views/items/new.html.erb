@@ -1,5 +1,4 @@
-<%= form_for @item do |f| %>
-  <%= f.text_field :memo, placeholder: "例）  縦縞" %>
+<%= form_for @item, :url => {:action => :create} do |f| %>
   <%= f.file_field :image, placeholder: "画像アップロード" %>
     <div>
       <%= f.label :kind_list, "種類 例)着物,袴" %><br>

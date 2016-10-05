@@ -6,7 +6,6 @@
 <% @items.each do |item| %>
   <a href='/items/<%= item.id %>'><div>
   <%= image_tag item.image(:medium)%></div>
-  <%= item.memo %></a>
   <%= render 'items/tag_list', tag_list: item.kind_list %>
   <%= render 'items/tag_list', tag_list: item.use_list %><br><br>
   <% end %>
