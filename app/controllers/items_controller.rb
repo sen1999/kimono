@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @items = params[:tag].present? ? Item.tagged_with(params[:tag]) : Item.all
+    @items = @items.includes(:tags)
   end
 
   def new
