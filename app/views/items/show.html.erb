@@ -1,5 +1,7 @@
   <%= image_tag @item.image(:medium)%></div>
-  <%= @item.memo %></a>
+  <%= @item.memo %></a><br>
+  <%= render 'items/tag_list', tag_list: @item.kind_list %><br>
+  <%= render 'items/tag_list', tag_list: @item.use_list %><br>
 
 <br><br>
 
