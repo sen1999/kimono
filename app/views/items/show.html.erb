@@ -1,15 +1,15 @@
+<div>
   <%= image_tag @item.image(:medium)%></div>
   <%= @item.memo %></a><br>
   <%= render 'items/tag_list', tag_list: @item.kind_list %><br>
   <%= render 'items/tag_list', tag_list: @item.use_list %><br>
+</div>
 
 <br><br>
+<div>
+  <a href='/items/<%= @item.id %>/edit'>edit</a><br>
+  <%= link_to "new", '/items/new' %><br>
+  <%= link_to "delete", item_path(@item), :method => :delete %><br>
 
-  <a href='/items/<%= @item.id %>/edit'>edit</a>
-
-  <br>
-
-<%= link_to "new", '/items/new' %><br>
-<%= link_to "delete", item_path(@item), :method => :delete %><br>
-
-<%= link_to "index", '/items' %>
+  <%= link_to "index", '/items' %>
+</div>
