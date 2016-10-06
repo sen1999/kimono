@@ -1,5 +1,9 @@
-  <p>KIMONO</p>
+<%= link_to "new", '/items/new' %>
+<%= link_to "index", '/items' %>
 
+
+<div>
+ <p>KIMONO</p>
 <%= form_for @kimono, :url => {:action => :create} do |f| %>
   <%= f.file_field :image, placeholder: "画像アップロード" %>
     <div>
@@ -8,6 +12,33 @@
     </div><br><br>
   <%= f.submit "たんすに入れる" %>
 <% end %>
+  </div>
+  <p>--------------------------------------</p>
 
-<%= link_to "new", '/items/new' %>
-<%= link_to "index", '/items' %>
+<div>
+  <p>OBI</p>
+<%= form_for @belt, :url => {:action => :create} do |f| %>
+  <%= f.file_field :image, placeholder: "画像アップロード" %>
+    <div>
+      <%= f.label :use_list, "例)春用,礼装（カンマ区切り）" %><br>
+      <%= text_field_tag 'belt[use_list]', @belt.use_list.join(',') %>
+    </div><br><br>
+  <%= f.submit "たんすに入れる" %>
+<% end %>
+  </div>
+
+  <p>--------------------------------------</p>
+
+<div>
+  <p>HANERI</p>
+<%= form_for @collar, :url => {:action => :create} do |f| %>
+  <%= f.file_field :image, placeholder: "画像アップロード" %>
+    <div>
+      <%= f.label :use_list, "例)春用,礼装（カンマ区切り）" %><br>
+      <%= text_field_tag 'collar[use_list]', @collar.use_list.join(',') %>
+    </div><br><br>
+  <%= f.submit "たんすに入れる" %>
+<% end %>
+  </div>
+
+  <p>--------------------------------------</p>
