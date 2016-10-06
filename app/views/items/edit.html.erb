@@ -1,22 +1,17 @@
 <div class="row form">
 <div class="col-lg-12">
 <div>
-<%= image_tag @item.image(:medium)%>
+<%= image_tag @kimono.image(:medium)%>
 </div>
 
 <br>
 
-<%= form_for @item do |f| %>
-  <div>
-  <%= f.text_field :memo, placeholder: "例）  縦縞" %>
-  </div>
+<%= form_for @kimono , :url => {:action => :update} do |f| %>
   <div>
   <%= f.file_field :image, placeholder: "画像アップロード" %>
   <div>
-      <%= f.label :kind_list, "種類 例)着物,袴" %><br>
-      <%= text_field_tag 'item[kind_list]', @item.kind_list.join(',') %><br>
       <%= f.label :use_list, "例)春用,礼装（カンマ区切り）" %><br>
-      <%= text_field_tag 'item[use_list]', @item.use_list.join(',') %>
+      <%= text_field_tag 'item[use_list]', @kimono.use_list.join(',') %>
     </div><br><br>
   </div>
 <%= f.submit "編集する" %>

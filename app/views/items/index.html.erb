@@ -3,10 +3,9 @@
 
 <br><br>
 
-<% @items.each do |item| %>
+<% @kimonos.each do |item| %>
   <a href='/items/<%= item.id %>'><div>
   <%= image_tag item.image(:medium)%></div>
-  <%= render 'items/tag_list', tag_list: item.kind_list %>
   <%= render 'items/tag_list', tag_list: item.use_list %><br><br>
   <% end %>
 
