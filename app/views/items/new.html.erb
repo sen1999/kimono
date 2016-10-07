@@ -5,6 +5,7 @@
 <div>
  <p>KIMONO</p>
 <%= form_for @kimono, :url => {:action => :create} do |f| %>
+  <%= f.hidden_field :flag, :value => "kimono" %>
   <%= f.file_field :image, placeholder: "画像アップロード" %>
     <div>
       <%= f.label :use_list, "例)春用,礼装（カンマ区切り）" %><br>
@@ -18,6 +19,7 @@
 <div>
   <p>OBI</p>
 <%= form_for @belt, :url => {:action => :create} do |f| %>
+  <%= f.hidden_field :flag, :value => "belt" %>
   <%= f.file_field :image, placeholder: "画像アップロード" %>
     <div>
       <%= f.label :use_list, "例)春用,礼装（カンマ区切り）" %><br>
@@ -32,6 +34,7 @@
 <div>
   <p>HANERI</p>
 <%= form_for @collar, :url => {:action => :create} do |f| %>
+  <%= f.hidden_field :flag, :value => "collar" %>
   <%= f.file_field :image, placeholder: "画像アップロード" %>
     <div>
       <%= f.label :use_list, "例)春用,礼装（カンマ区切り）" %><br>

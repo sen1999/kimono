@@ -23,15 +23,16 @@ class ItemsController < ApplicationController
   end
 
   def create
+    binding.pry
     Kimono.create(kimono_params)
     @kimonos = Kimono.all
 
-    # Collar.create(collar_params)
-    # @collars = Collar.all
+    Collar.create(collar_params)
+    @collars = Collar.all
 
 
-    # Belt.create(belt_params)
-    # @belt = Belt.all
+    Belt.create(belt_params)
+    @belt = Belt.all
     redirect_to :acton => "items#index"
   end
 
@@ -59,11 +60,11 @@ private
   end
 
 
-  # def belt_params
-  #   params.require(:belt).permit(:image, :use_list)
-  # end
+  def belt_params
+    params.require(:belt).permit(:image, :use_list)
+  end
 
-  #   def collar_params
-  #   params.require(:collar).permit(:image, :use_list)
-  # end
+    def collar_params
+    params.require(:collar).permit(:image, :use_list)
+  end
 end
