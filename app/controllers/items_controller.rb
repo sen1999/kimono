@@ -54,17 +54,22 @@ class ItemsController < ApplicationController
   end
 private
 
+  case params[:flag]
+  when kimono
+    def kimono_params
+      params.require(:kimono).permit(:image, :use_list)
+    end
 
-  def kimono_params
-    params.require(:kimono).permit(:image, :use_list)
-  end
+  when collar
+    def belt_params
+      params.require(:belt).permit(:image, :use_list)
+    end
 
-
-  def belt_params
-    params.require(:belt).permit(:image, :use_list)
-  end
-
+  when belt
     def collar_params
     params.require(:collar).permit(:image, :use_list)
+  end
+
+  else
   end
 end
