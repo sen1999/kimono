@@ -13,30 +13,3 @@
 
   <p>--------------------------------------</p>
 <br><br>
-
-<div>
-  <h3>帯</h3>
-<% @belts.each do |item| %>
-  <a href='/items/<%= item.id %>'>
-  <%= image_tag item.image(:medium)%>
-  </a>
-  <%= render 'items/tag_list', tag_list: item.use_list %><br><br>
-  <% end %>
-</div>
-
-
-  <p>--------------------------------------</p>
-<br><br>
-
-<div>
-  <h3>半襟</h3>
-<% @collars.each do |item| %>
-  <a href='/items/<%= item.id %>'>
-  <%= image_tag item.image(:medium)%>
-  </a>
-  <%= render 'items/tag_list', tag_list: item.use_list %><br><br>
-  <% end %>
-</div>
-
-
-  <p>--------------------------------------</p>

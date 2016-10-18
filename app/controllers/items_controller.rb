@@ -15,24 +15,23 @@ class ItemsController < ApplicationController
     @kimonos = Kimono.all
     @kimono = Kimono.new
 
-    @belts = Belt.all
-    @belt = Belt.new
+    # @belts = Belt.all
+    # @belt = Belt.new
 
-    @collars = Collar.all
-    @collar = Collar.new
+    # @collars = Collar.all
+    # @collar = Collar.new
   end
 
   def create
-    binding.pry
     Kimono.create(create_params)
     @kimonos = Kimono.all
 
-    Collar.create(create_params)
-    @collars = Collar.all
+    # Collar.create(create_params)
+    # @collars = Collar.all
 
 
-    Belt.create(create_params)
-    @belt = Belt.all
+    # Belt.create(create_params)
+    # @belt = Belt.all
     redirect_to :acton => "items#index"
   end
 
@@ -41,6 +40,7 @@ class ItemsController < ApplicationController
     @kimonos = Kimono.all
     # Belt.find(params[:id]).destroy
     # @belts = Belt.all
+    
   end
 
   def edit
@@ -53,22 +53,22 @@ class ItemsController < ApplicationController
   end
 private
   def create_params
-    case params[:flag]
-    when "kimono"
-      def kimono_params
+    # case params[:flag]
+    # when "kimono"
+      # def kimono_params
         params.require(:kimono).permit(:image, :use_list)
-      end
+    #   end
 
-    when "belt"
-      def belt_params
-        params.require(:belt).permit(:image, :use_list)
-      end
+    # when "belt"
+    #   def belt_params
+    #     params.require(:belt).permit(:image, :use_list)
+    #   end
 
-    when "collar"
-      def collar_params
-        params.require(:collar).permit(:image, :use_list)
-      end
-    else
-    end
+    # when "collar"
+    #   def collar_params
+    #     params.require(:collar).permit(:image, :use_list)
+    #   end
+    # else
+    # end
   end
 end
