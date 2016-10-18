@@ -24,14 +24,14 @@ class ItemsController < ApplicationController
 
   def create
     binding.pry
-    Kimono.create(kimono_params)
+    Kimono.create(create_params)
     @kimonos = Kimono.all
 
-    Collar.create(collar_params)
+    Collar.create(create_params)
     @collars = Collar.all
 
 
-    Belt.create(belt_params)
+    Belt.create(create_params)
     @belt = Belt.all
     redirect_to :acton => "items#index"
   end
@@ -50,26 +50,25 @@ class ItemsController < ApplicationController
   def update
     # @kimono = Kimono.find(params[:id]).update(update_params)
     Kimono.update(update_params)
-    redirect_to :bacj
   end
 private
+  def create_params
+    case params[:flag]
+    when "kimono"
+      def kimono_params
+        params.require(:kimono).permit(:image, :use_list)
+      end
 
-  case params[:flag]
-  when kimono
-    def kimono_params
-      params.require(:kimono).permit(:image, :use_list)
+    when "belt"
+      def belt_params
+        params.require(:belt).permit(:image, :use_list)
+      end
+
+    when "collar"
+      def collar_params
+        params.require(:collar).permit(:image, :use_list)
+      end
+    else
     end
-
-  when collar
-    def belt_params
-      params.require(:belt).permit(:image, :use_list)
-    end
-
-  when belt
-    def collar_params
-    params.require(:collar).permit(:image, :use_list)
-  end
-
-  else
   end
 end
