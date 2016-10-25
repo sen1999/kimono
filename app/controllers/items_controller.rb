@@ -14,25 +14,32 @@ class ItemsController < ApplicationController
   def new
     @kimonos = Kimono.all
     @kimono = Kimono.new
+  end
 
-    # @belts = Belt.all
-    # @belt = Belt.new
+  def belt_new
+    @belts = Belt.all
+    @belt = Belt.new
+  end
 
-    # @collars = Collar.all
-    # @collar = Collar.new
+  def collar_new
+    @collars = Collar.all
+    @collar = Collar.new
   end
 
   def create
     Kimono.create(create_params)
     @kimonos = Kimono.all
-
-    # Collar.create(create_params)
-    # @collars = Collar.all
-
-
-    # Belt.create(create_params)
-    # @belt = Belt.all
     redirect_to :acton => "items#index"
+  end
+
+  def belt_create
+    Collar.create(create_params)
+    @collar = Collar.all
+  end
+
+  def collar_create
+    Belt.create(create_params)
+    @belt = Belt.all
   end
 
   def destroy
@@ -40,7 +47,6 @@ class ItemsController < ApplicationController
     @kimonos = Kimono.all
     # Belt.find(params[:id]).destroy
     # @belts = Belt.all
-    
   end
 
   def edit
@@ -48,8 +54,9 @@ class ItemsController < ApplicationController
   end
 
   def update
+    binding.pry
     # @kimono = Kimono.find(params[:id]).update(update_params)
-    Kimono.update(update_params)
+    Kimono.update(update_params[:id])
   end
 private
   def create_params
@@ -70,5 +77,9 @@ private
     #   end
     # else
     # end
+  end
+
+  def update_params
+    params.permit(:image, :use_list)
   end
 end
