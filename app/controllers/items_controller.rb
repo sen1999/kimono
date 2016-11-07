@@ -4,10 +4,16 @@ class ItemsController < ApplicationController
     @kimonos = Kimono.all
     @belts = Belt.all
     @collars = Collar.all
+
+     require 'rubygems'
+     require 'RMagick'
   end
 
   def show
     @kimono = Kimono.find(params[:id])
+
+     require 'rubygems'
+     require 'RMagick'
   end
 
   def new
@@ -33,6 +39,9 @@ class ItemsController < ApplicationController
     Kimono.create(create_params)
     @kimonos = Kimono.all
     redirect_to :acton => "items#index"
+
+     require 'rubygems'
+     require 'RMagick'
   end
 
   def belt_create
@@ -49,12 +58,17 @@ class ItemsController < ApplicationController
   def destroy
     Kimono.find(params[:id]).destroy
     @kimonos = Kimono.all
+
+
     # Belt.find(params[:id]).destroy
     # @belts = Belt.all
   end
 
   def edit
     @kimono = Kimono.find(params[:id])
+
+     require 'rubygems'
+     require 'RMagick'
   end
 
   def update

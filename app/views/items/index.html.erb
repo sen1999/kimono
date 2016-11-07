@@ -6,7 +6,7 @@
   <h3>着物</h3>
 <% @kimonos.each do |item| %>
   <a href='/items/<%= item.id %>'>
-    <%= image_tag item.image %></a>
+    <%= image_tag item.image(:thumb) %></a>
   <%= render 'items/tag_list', tag_list: item.use_list %><br><br>
   <% end %>
 </div>
