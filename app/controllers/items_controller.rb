@@ -14,6 +14,10 @@ class ItemsController < ApplicationController
   def new
     @kimonos = Kimono.all
     @kimono = Kimono.new
+
+     require 'rubygems'
+  require 'RMagick'
+  
   end
 
   def belt_new
@@ -55,7 +59,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    binding.pry
     # @kimono = Kimono.find(params[:id]).update(update_params)
     Kimono.update(update_params[:id])
   end

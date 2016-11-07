@@ -17,18 +17,11 @@
   <p>--------------------------------------</p>
 
   <div>
+  require 'rubygems'
+  require 'RMagick'
 
-<div>
- <p>OBI</p>
-<%= form_for @belt, :url => :belt_create} do |f| %>
-  <%= f.file_field :image, placeholder: "画像アップロード" %>
-    <div>
-      <%= f.label :use_list, "例)春用,礼装（カンマ区切り）" %><br>
-      <%= text_field_tag 'belt[use_list]', @belt.use_list.join(',') %>
-    </div><br><br>
-  <%= f.submit "たんすに入れる" %>
-<% end %>
-  </div>
-  <p>--------------------------------------</p>
-
-  <div>
+  
+<!-- filename = 'cat.jpg'
+img = Magick::ImageList.new(filename)
+p img.columns #幅
+p img.rows #高さ -->
