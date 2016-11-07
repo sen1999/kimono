@@ -8,16 +8,15 @@ class ItemsController < ApplicationController
 
   def show
     @kimono = Kimono.find(params[:id])
-    # @belt = Belt.find(params[:id])
   end
 
   def new
     @kimonos = Kimono.all
     @kimono = Kimono.new
 
-     require 'rubygems'
-  require 'RMagick'
-  
+     # require 'rubygems'
+     # require 'RMagick'
+
   end
 
   def belt_new
