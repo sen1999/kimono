@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005110105) do
+ActiveRecord::Schema.define(version: 20161107154312) do
 
   create_table "belts", force: :cascade do |t|
     t.datetime "created_at",                     null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20161005110105) do
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
+    t.string   "image",              limit: 255
   end
 
   create_table "taggings", force: :cascade do |t|
