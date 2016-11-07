@@ -33,6 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def belt_create
+    @belt = Belt.new
     Collar.create(create_params)
     @collar = Collar.all
   end
