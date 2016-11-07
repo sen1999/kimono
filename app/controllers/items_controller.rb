@@ -14,8 +14,8 @@ class ItemsController < ApplicationController
     @kimonos = Kimono.all
     @kimono = Kimono.new
 
-     # require 'rubygems'
-     # require 'RMagick'
+     require 'rubygems'
+     require 'RMagick'
 
   end
 

@@ -7,3 +7,5 @@ Rails.application.initialize!
 # carrierwave
 
 # require 'carrierwave/orm/activerecord'
+
+# config.gem "rmagick", :version=>"2.13.1",:lib=>"RMagick"

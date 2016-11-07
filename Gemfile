@@ -49,8 +49,6 @@ group :development do
   gem 'devise'
   gem 'kaminari'
   # for image
-  gem 'paperclip'
-
   # gem 'acts-as-taggable-on'
   gem 'jquery-ui-rails'
   gem 'gon'
@@ -59,5 +57,6 @@ group :development do
   gem 'acts-as-taggable-on'
 
   gem 'carrierwave'
+  gem 'rmagick'
 end
 
